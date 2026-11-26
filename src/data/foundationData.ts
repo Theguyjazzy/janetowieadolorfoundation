@@ -43,8 +43,8 @@ export const JOF_CONTACT = {
   fullName: 'Janet Owieadolor Foundation',
   tagline: 'Restoring Hope & Dignity',
   address: '22 Eromosele Street, Off College Road, Ekewan Road, Benin City, Edo State',
-  phoneDisplay: '+234 803 333 1232',
-  phoneHref: 'tel:+2348033331232',
+  phoneDisplay: '+234 703 324 4322',
+  phoneHref: 'tel:+2347033244322',
   whatsappNumber: '2347033244322',
   whatsappUrl:
     'https://wa.me/2347033244322?text=Hello%20Janet%20Owieadolor%20Foundation%2C%20I%20would%20like%20to%20inquire%20about...',
