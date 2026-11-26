@@ -1,4 +1,4 @@
-name: Deploy to Namecheap Hosting
+name: Build Check
 
 on:
   push:
@@ -7,8 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
-    name: Build and Deploy via FTP
+  build:
+    name: Typecheck and Build
     runs-on: ubuntu-latest
 
     steps:
@@ -25,22 +25,3 @@ jobs:
         run: |
           npm ci
           npm run build
-
-      - name: Sync dist/ to Namecheap via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          security: loose
-          timeout: 60000
-          log-level: standard
-          local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            .well-known/**
-            cgi-bin/**

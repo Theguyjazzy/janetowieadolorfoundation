@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/janebndc/public_html/
+    - /bin/cp -f dist/.htaccess $DEPLOYPATH
+    - /bin/cp -rf dist/* $DEPLOYPATH
