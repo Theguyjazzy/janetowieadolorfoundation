@@ -16,14 +16,7 @@ interface StoryReaderPageProps {
 
 function matchBaseline(slug: string): StoryItem | undefined {
   const clean = decodeURIComponent(slug).toLowerCase();
-  return BASELINE_STORIES.find(
-    (s) =>
-      s.slug === clean ||
-      (clean.includes('adaeze') && s.slug.includes('adaeze')) ||
-      (clean.includes('ngozi') && s.slug.includes('ngozi')) ||
-      (clean.includes('chiamaka') && s.slug.includes('chiamaka')) ||
-      (clean.includes('blessing') && s.slug.includes('blessing')),
-  );
+  return BASELINE_STORIES.find((s) => s.slug === clean);
 }
 
 export const StoryReaderPage: React.FC<StoryReaderPageProps> = ({ slug, onNavigate }) => {

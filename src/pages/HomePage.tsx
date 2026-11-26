@@ -5,6 +5,7 @@ import {
   BASELINE_STORIES,
   CHRONICLE_FRAMES,
   CORE_PROGRAMS,
+  DIGNITY_VOICES,
   DONATION_TIERS,
   IMPACT_METRICS,
   JOF_CONTACT,
@@ -53,7 +54,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, showToast }) => 
   }, []);
 
   const handleSelectVoice = (idx: number) => {
-    const normalized = (idx + BASELINE_STORIES.length) % BASELINE_STORIES.length;
+    const normalized = (idx + DIGNITY_VOICES.length) % DIGNITY_VOICES.length;
     setActiveVoiceIdx(normalized);
     if (!prefersReducedMotion() && voiceStageRef.current) {
       gsap.fromTo(
@@ -68,7 +69,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, showToast }) => 
     if (voicePaused) return;
     const timer = window.setInterval(() => {
       setActiveVoiceIdx((prev) => {
-        const next = (prev + 1) % BASELINE_STORIES.length;
+        const next = (prev + 1) % DIGNITY_VOICES.length;
         if (!prefersReducedMotion() && voiceStageRef.current) {
           gsap.fromTo(
             voiceStageRef.current,
@@ -151,7 +152,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, showToast }) => 
 
   const activeTier = DONATION_TIERS[selectedTierIdx];
   const activeProgram = CORE_PROGRAMS[activeProgramIdx];
-  const activeVoice = BASELINE_STORIES[activeVoiceIdx];
+  const activeVoice = DIGNITY_VOICES[activeVoiceIdx];
   const leadStory = stories[0] || BASELINE_STORIES[0];
   const companionStories = stories.slice(1, 4);
 
@@ -554,28 +555,28 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, showToast }) => 
                 Voices of dignity.
               </h2>
 
-              <div className="voices-avatar-bar" role="tablist" aria-label="Select beneficiary testimonial">
-                {BASELINE_STORIES.map((person, idx) => (
+              <div className="voices-avatar-bar" role="tablist" aria-label="Select foundation voice">
+                {DIGNITY_VOICES.map((person, idx) => (
                   <button
-                    key={person.slug}
+                    key={person.id}
                     type="button"
                     role="tab"
                     aria-selected={activeVoiceIdx === idx}
                     className={`voice-avatar-btn ${activeVoiceIdx === idx ? 'is-active' : ''}`}
                     onClick={() => handleSelectVoice(idx)}
                   >
-                    <img src={person.imageUrl} alt={person.beneficiaryName} />
-                    <span>{person.beneficiaryName}</span>
+                    <img src={person.imageUrl} alt={person.name} />
+                    <span>{person.name}</span>
                   </button>
                 ))}
               </div>
 
               <div className="voice-quote-stage" ref={voiceStageRef}>
-                <blockquote className="voice-quote-text">“{activeVoice.pullquote}”</blockquote>
+                <blockquote className="voice-quote-text">“{activeVoice.quote}”</blockquote>
                 <div className="voice-attribution">
                   <div>
-                    <div className="voice-person-name">{activeVoice.beneficiaryName}</div>
-                    <div className="voice-person-meta">{activeVoice.beneficiaryMeta}</div>
+                    <div className="voice-person-name">{activeVoice.name}</div>
+                    <div className="voice-person-meta">{activeVoice.meta}</div>
                   </div>
 
                   <div className="voice-controls">

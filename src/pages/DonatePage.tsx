@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CreditCard, MessageCircle, ShieldCheck } from 'lucide-react';
+import { MessageCircle, ShieldCheck } from 'lucide-react';
 import {
   DONATE_TRANSPARENCY_STATS,
   DONATION_TIERS,
@@ -221,16 +221,6 @@ export const DonatePage: React.FC<DonatePageProps> = ({ initialAmount, showToast
                 >
                   <MessageCircle size={18} aria-hidden="true" />
                   Donate via WhatsApp
-                </button>
-
-                <button
-                  type="button"
-                  className="btn-disabled-card"
-                  disabled
-                  aria-disabled="true"
-                >
-                  <CreditCard size={17} aria-hidden="true" />
-                  <span>Pay with Card (Coming Soon)</span>
                 </button>
 
                 <p style={{ fontSize: '0.875rem', color: 'var(--ink-secondary)', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>

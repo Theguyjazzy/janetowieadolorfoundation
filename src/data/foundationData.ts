@@ -187,103 +187,50 @@ export const CORE_PROGRAMS: ProgramItem[] = [
   },
 ];
 
+export interface DignityVoice {
+  id: string;
+  name: string;
+  meta: string;
+  imageUrl: string;
+  quote: string;
+}
+
+export const DIGNITY_VOICES: DignityVoice[] = [
+  {
+    id: 'mama-janet-owieadolor',
+    name: 'Mama Janet Owieadolor',
+    meta: 'Founder · Janet Owieadolor Foundation, Benin City',
+    imageUrl: '/assets/campaign/janet-portrait.jpg',
+    quote:
+      "To reach out to and support widows and single mothers by strengthening their capacity to overcome life's challenges and achieve success.",
+  },
+  {
+    id: 'joy-oboite',
+    name: 'Joy Oboite',
+    meta: 'Editor & Programme Coordinator · Benin City',
+    imageUrl: '/assets/founders/joy-oboite.jpg',
+    quote:
+      'JOF has reached out to hundreds of widows across both rural and urban communities in Edo State, partnering with Glorious Widows Fellowship and Widows Help Rendezvous to carry out our Superwoman outreaches.',
+  },
+  {
+    id: 'dr-francis-owieadolor',
+    name: 'Dr. Francis Owieadolor',
+    meta: 'Chairman, Board of Trustees · JOF',
+    imageUrl: '/assets/founders/francis-owieadolor.jpg',
+    quote:
+      'Every outreach pairs immediate household food relief and free medical care with practical empowerment that sustains widows and their children for years.',
+  },
+  {
+    id: 'edo-community-archive',
+    name: 'Igbanke & Abumwenre Field Archive',
+    meta: 'Edo State Community Outreaches · 500+ Widows Reached',
+    imageUrl: '/assets/outreach/2018-abumwenre-cover.jpg',
+    quote:
+      'Edo women are strong, bold, and hardworking. When widows are economically empowered, their children are shielded from poverty and exploitation.',
+  },
+];
+
 export const BASELINE_STORIES: StoryItem[] = [
-  {
-    slug: 'adaeze-garment-business',
-    title: 'From Eviction Threat to Thriving Garment Business',
-    category: 'Micro-Grants',
-    excerpt:
-      'After losing her husband and facing land eviction with three children, Adaeze secured her home through JOF legal aid and built a tailoring enterprise that mentors ten widows.',
-    imageUrl: '/assets/beneficiaries/beneficiary-adaeze.jpg',
-    beneficiaryName: 'Adaeze O.',
-    beneficiaryMeta: 'Micro-Grant Beneficiary & Business Owner · Enugu State',
-    pullquote:
-      "Through JOF's legal advocacy and a tailoring grant, I built a flourishing garment business. Today, all my children are in school, and I mentor 10 other widows.",
-    paragraphs: [
-      "When Adaeze's husband passed away suddenly, she was left to care for three young children with no income and no safety net. Within months, extended family members contested the family's land, and Adaeze found herself facing eviction from the only home her children had known.",
-      '"I didn\'t know where to turn," she recalls. "I had no money for a lawyer, and I had three children depending on me." A neighbor referred her to JOF\'s legal advocacy program, which took on her land rights case at no cost.',
-      "While the legal team worked to secure her family's home, Adaeze enrolled in JOF's vocational training program, learning tailoring and garment production. A ₦75,000 micro-grant covered her first sewing machine and starter fabric inventory.",
-      'Eighteen months later, Adaeze runs a full garment business out of her home, employing two apprentices and supplying uniforms to a local school. All three of her children are enrolled in school, and she now volunteers as a peer mentor, walking ten other widows through the same legal and vocational process that changed her life.',
-    ],
-    stats: [
-      { value: '₦75,000', label: 'Micro-Grant Received' },
-      { value: '3', label: 'Children in School' },
-      { value: '10', label: 'Widows Mentored' },
-    ],
-    tags: ['100% Self-Sufficient', '3 Children Enrolled'],
-  },
-  {
-    slug: 'ngozi-market-stall',
-    title: 'From a Wheelbarrow to a Thriving Market Stall',
-    category: 'Micro-Enterprise',
-    excerpt:
-      'Pushing peppers from a roadside wheelbarrow left Ngozi losing unsold stock each night. A ₦50,000 micro-grant transformed her trade into a stall employing two fellow widows.',
-    imageUrl: '/assets/beneficiaries/beneficiary-ngozi.jpg',
-    beneficiaryName: 'Ngozi A.',
-    beneficiaryMeta: 'Micro-Enterprise Beneficiary & Market Trader · Ogun State',
-    pullquote:
-      "With a micro-grant and business training from JOF, I now run a stall that supplies three local restaurants. I've helped two other widows set up their own stalls.",
-    paragraphs: [
-      "For two years after her husband's death, Ngozi sold peppers and tomatoes from a wheelbarrow she pushed between her local market and the roadside, earning barely enough to feed her household each day.",
-      '"I had no stall, no storage, nowhere to keep my produce overnight," she says. "Everything I didn\'t sell by evening, I lost." JOF\'s economic empowerment team identified Ngozi through a community outreach visit and enrolled her in a business fundamentals course alongside a ₦50,000 micro-grant.',
-      "With the grant, Ngozi secured a proper stall in Ogun State's central market, invested in storage crates, and began buying produce in bulk directly from farmers, cutting her costs significantly. Within a year, she was supplying fresh produce to three local restaurants on standing weekly orders.",
-      "Today, Ngozi's stall employs two other widows from her community, both of whom she trained herself using the same business principles JOF taught her.",
-    ],
-    stats: [
-      { value: '₦50,000', label: 'Micro-Grant Received' },
-      { value: '3', label: 'Restaurant Clients' },
-      { value: '2', label: 'Widows Employed' },
-    ],
-    tags: ['Stall Fully Owned', 'Employs 2 Widows'],
-  },
-  {
-    slug: 'chiamaka-healthcare-recovery',
-    title: 'A Second Chance at Health, and at Life',
-    category: 'Healthcare',
-    excerpt:
-      'An untreated chronic illness left Chiamaka barely able to stand before a JOF screening intervened, covering her full treatment and connecting her with grief counseling.',
-    imageUrl: '/assets/campaign/medical-checkup.jpg',
-    beneficiaryName: 'Chiamaka E.',
-    beneficiaryMeta: 'Healthcare Program Beneficiary · Anambra State',
-    pullquote:
-      "JOF's healthcare program covered my treatment and connected me to a grief counselor. I'm healthy again, and now volunteer at their quarterly medical clinics.",
-    paragraphs: [
-      "In the months after her husband's death, Chiamaka noticed her health declining but couldn't afford to see a doctor. What began as fatigue and occasional pain progressed for nearly a year before a JOF community health screening caught a serious, treatable condition that had gone undiagnosed.",
-      '"By the time I was screened, I could barely stand for long," Chiamaka says. "I had been putting my children first, telling myself I would deal with my health later. Later almost never came."',
-      "JOF's healthcare program covered the full cost of her treatment and connected her with a grief counselor to help her process the loss of her husband alongside her health scare. Over eight months, Chiamaka made a full recovery.",
-      "She now volunteers at JOF's quarterly medical outreach clinics, encouraging other widows in her community not to delay care, sharing her own story as a reminder of what's at stake.",
-    ],
-    stats: [
-      { value: '8', label: 'Months to Recovery' },
-      { value: '100%', label: 'Treatment Covered' },
-      { value: '4x', label: 'Clinics Volunteered' },
-    ],
-    tags: ['Full Recovery', 'Clinic Volunteer'],
-  },
-  {
-    slug: 'blessing-daughter-education',
-    title: "Keeping a Daughter's Education Alive",
-    category: 'Education & Relief',
-    excerpt:
-      'Faced with withdrawing her eldest daughter from secondary school, Blessing received three months of emergency household groceries and an ongoing tuition stipend.',
-    imageUrl: '/assets/campaign/crowd-tent-1.jpg',
-    beneficiaryName: 'Blessing U.',
-    beneficiaryMeta: 'Emergency Relief & Education Beneficiary · Lagos State',
-    pullquote:
-      'An emergency relief package kept my children fed during our hardest months, and a tuition stipend meant my daughter never had to drop out of school.',
-    paragraphs: [
-      "When Blessing lost her husband, the family's income disappeared overnight. With three children to feed and school fees due within weeks, she made the painful decision to withdraw her eldest daughter from secondary school to save money.",
-      '"She cried for days," Blessing remembers. "She was one of the best students in her class, and I felt like I had taken her future away." A local church connected Blessing with JOF\'s emergency relief program just weeks later.',
-      "An emergency relief package covered groceries and household essentials for three months, giving Blessing breathing room. A tuition stipend from the Foundation's education support fund then covered her daughter's school fees for the remainder of the academic year, and has continued since.",
-      'Blessing has since rebuilt a stable income from home, running a small provisions business. Her daughter is now in her final year of secondary school, with plans to sit for university entrance exams next year.',
-    ],
-    stats: [
-      { value: '3', label: 'Months Relief Covered' },
-      { value: '1', label: 'Daughter Back in School' },
-      { value: 'Final Yr', label: 'Secondary School' },
-    ],
-    tags: ['Daughter in School', 'Stable Housing'],
-  },
   {
     slug: 'december-2022-christmas-outreach-scholarship',
     title: 'Christmas Widows Outreach & Scholarship Award in Benin City',

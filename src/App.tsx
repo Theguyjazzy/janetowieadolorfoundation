@@ -22,10 +22,10 @@ function normalizePath(rawPathname: string, rawSearch: string): { path: string; 
   if (path === '/post.html' && params.get('slug')) {
     return { path: `/stories/${encodeURIComponent(params.get('slug')!)}`, search: '' };
   }
-  if (path === '/story-adaeze.html') return { path: '/stories/adaeze-garment-business', search: '' };
-  if (path === '/story-ngozi.html') return { path: '/stories/ngozi-market-stall', search: '' };
-  if (path === '/story-chiamaka.html') return { path: '/stories/chiamaka-healthcare-recovery', search: '' };
-  if (path === '/story-blessing.html') return { path: '/stories/blessing-daughter-education', search: '' };
+  if (path === '/story-adaeze.html') return { path: '/stories', search: '' };
+  if (path === '/story-ngozi.html') return { path: '/stories', search: '' };
+  if (path === '/story-chiamaka.html') return { path: '/stories', search: '' };
+  if (path === '/story-blessing.html') return { path: '/stories', search: '' };
 
   return { path, search: rawSearch };
 }
