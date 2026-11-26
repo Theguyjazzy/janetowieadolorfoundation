@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.vercel/
+.screenshots/
+.taste-skill/
+*.tsbuildinfo
+.env
+.env.*
